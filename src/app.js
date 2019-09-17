@@ -53,6 +53,7 @@ app.get("/about", (req, res) => {
 });
 
 app.get("/weather", (req, res) => {
+  console.log("*****************************");
   if (!req.query.address) {
     return res.send({
       error: "Please provide entry for location!"
