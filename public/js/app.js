@@ -6,7 +6,7 @@ console.log('Client Side Javascript file is loaded')
 //     })
 // }) 
 
-
+const port = require("../../src/app");
 
 const weatherForm = document.querySelector('form');
 const search = document.querySelector('input');
@@ -21,7 +21,7 @@ weatherForm.addEventListener('submit' , (e) => {
   message1.textContent = 'Fetching data...';
   message2.textContent = '';
 
-  fetch(`https://0.0.0.0:${process.env.PORT}/weather?address=`+location).then((response) => {
+  fetch(`https://0.0.0.0:${port}/weather?address=`+location).then((response) => {
     response.json().then((data) => {
       if(data.error){
         message1.textContent = data.error;
